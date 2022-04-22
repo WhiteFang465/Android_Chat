@@ -1,20 +1,30 @@
 package com.atulj.chatapplication.db.entity;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 
+@Entity
 public class Message {
-    public Message(String message, Date created, int messageFromUserId, int messageToUserId) {
-        Message = message;
+    @PrimaryKey
+    private int messageId;
+    @ColumnInfo
+    private String chatMessage;
+    @ColumnInfo
+    private Date created;
+    @ColumnInfo
+    private int messageFromUserId;
+    @ColumnInfo
+    private int messageToUserId;
+
+    public Message(String chatMessage, Date created, int messageFromUserId, int messageToUserId) {
+        this.chatMessage = chatMessage;
         this.created = created;
         this.messageFromUserId = messageFromUserId;
         this.messageToUserId = messageToUserId;
     }
-
-    private int messageId;
-private String Message;
-private Date created;
-private int messageFromUserId;
-private int messageToUserId;
 
     public int getMessageId() {
         return messageId;
@@ -24,12 +34,12 @@ private int messageToUserId;
         this.messageId = messageId;
     }
 
-    public String getMessage() {
-        return Message;
+    public String getChatMessage() {
+        return chatMessage;
     }
 
-    public void setMessage(String message) {
-        Message = message;
+    public void setChatMessage(String chatMessage) {
+        this.chatMessage = chatMessage;
     }
 
     public Date getCreated() {

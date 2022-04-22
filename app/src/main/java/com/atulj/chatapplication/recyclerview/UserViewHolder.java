@@ -1,6 +1,7 @@
 package com.atulj.chatapplication.recyclerview;
 
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,13 +21,13 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
     public UserViewHolder(@NonNull View itemView) {
         super(itemView);
         listOfUser=itemView.findViewById(R.id.user_list_textView);
-
-        itemView.setOnClickListener(view -> {
-            Toast.makeText(itemView.getContext(), "Click Completed", Toast.LENGTH_SHORT).show();
+        itemView.setOnClickListener(v -> {
+            Toast.makeText(itemView.getContext(), "User selected", Toast.LENGTH_SHORT).show();
 
         });
     }
     public void bind(User entity){
-        listOfUser.setText(entity.getFirstName());
+
+        listOfUser.setText(entity.getFirstName()+" "+entity.getLastName());
     }
 }

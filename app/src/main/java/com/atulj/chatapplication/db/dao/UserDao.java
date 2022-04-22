@@ -9,12 +9,14 @@ import androidx.room.Update;
 import com.atulj.chatapplication.db.entity.User;
 
 import java.nio.channels.SelectableChannel;
+import java.util.List;
 
 
 @Dao
 public interface UserDao {
 
-
+    @Query("select * from User")
+    List<User> getAllUser();
 
     @Query("select * from User where id = :id")
     User getUser(int id);
@@ -32,6 +34,5 @@ public interface UserDao {
     @Delete
     void delete(User... users);
 
-    @Query("select count(*) from User")
-    int userCount(int userCount);
+
 }
