@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Chat Application</string>
+    <string name="login_usernameHint">User Name</string>
+    <string name="login_passwordHint">Password</string>
+    <string name="register_firstName">First Name</string>
+    <string name="register_lastName">Last Name</string>
+    <string name="edit_confirm">Confirm</string>
+    <string name="login_loginButton">Login</string>
+    <string name="login_registerButton">Register</string>
+    <string name="register_confirmPasswordField">Confirm Password</string>
+    <string name="login_invalidUsername">Invalid UserName</string>
+    <string name="login_invalidPassword">Invalid Password</string>
+    <string name="register_emptyError">The Fields cannot be empty</string>
+    <string name="register_passwordDoesNotMatch">Password Does not Match</string>
+    <string name="register_register">Register</string>
 </resources>
