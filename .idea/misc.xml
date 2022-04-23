@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidClass/ChatApplication/app/src/main/res/layout/activity_chat.xml" value="0.1" />
         <entry key="..\:/AndroidClass/ChatApplication/app/src/main/res/layout/activity_edit.xml" value="0.2" />
         <entry key="..\:/AndroidClass/ChatApplication/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/AndroidClass/ChatApplication/app/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="..\:/AndroidClass/ChatApplication/app/src/main/res/layout/activity_register.xml" value="0.1" />
-        <entry key="..\:/AndroidClass/ChatApplication/app/src/main/res/layout/message_list_view_item.xml" value="0.25" />
+        <entry key="..\:/AndroidClass/ChatApplication/app/src/main/res/layout/message_list_view_item.xml" value="0.19924812030075187" />
         <entry key="..\:/AndroidClass/ChatApplication/app/src/main/res/layout/message_list_view_item_from.xml" value="0.1" />
         <entry key="..\:/AndroidClass/ChatApplication/app/src/main/res/layout/user_list.xml" value="0.1" />
       </map>

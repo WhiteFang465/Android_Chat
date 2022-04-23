@@ -13,11 +13,11 @@ public interface MessageDao {
     @Query("select * from message")
     List<Message> getAllMessages();
 
-    @Query("select chatMessage from message where messageFromUserId=:id")
-    List<Message> getMessagesFromUserId(int id);
-
-    @Query("select chatMessage from message where messageToUserId=:id")
-    List<Message> getMessagesToUserId(int id);
+//    @Query("select chatMessage from message where message_from_user_id=(select * from user where id=:id)")
+//    List<Message> getMessagesFromUserId(int id);
+//
+//    @Query("select chatMessage from message where message_to_user_id=(select * from user where id=:id)")
+//    List<Message> getMessagesToUserId(int id);
 
 
 }

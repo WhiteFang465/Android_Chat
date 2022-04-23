@@ -6,17 +6,21 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.atulj.chatapplication.db.dao.MessageDao;
 import com.atulj.chatapplication.db.dao.UserDao;
+import com.atulj.chatapplication.db.entity.Message;
 import com.atulj.chatapplication.db.entity.User;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities ={User.class,Message.class}, version = 3)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UserDao getUserDao();
+    public abstract MessageDao getMessageDao();
+
 
     private static final int NUMBER_OF_THREADS = 2;
     public static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);

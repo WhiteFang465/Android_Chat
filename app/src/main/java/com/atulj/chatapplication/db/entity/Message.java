@@ -2,26 +2,27 @@ package com.atulj.chatapplication.db.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-import java.util.Date;
-
-@Entity
+@Entity(foreignKeys = {
+        @ForeignKey(entity = User.class, parentColumns = {"id"}, childColumns = "message_from_user_id", onDelete = ForeignKey.CASCADE),
+        @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "message_to_user_id", onDelete = ForeignKey.CASCADE)},
+        indices = {@Index(value = {"message_from_user_id", "message_to_user_id"}, unique = true)}
+)
 public class Message {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int messageId;
     @ColumnInfo
     private String chatMessage;
-    @ColumnInfo
-    private Date created;
-    @ColumnInfo
+    @ColumnInfo(name = "message_from_user_id")
     private int messageFromUserId;
-    @ColumnInfo
+    @ColumnInfo(name = "message_to_user_id")
     private int messageToUserId;
 
-    public Message(String chatMessage, Date created, int messageFromUserId, int messageToUserId) {
+    public Message(String chatMessage, int messageFromUserId, int messageToUserId) {
         this.chatMessage = chatMessage;
-        this.created = created;
         this.messageFromUserId = messageFromUserId;
         this.messageToUserId = messageToUserId;
     }
@@ -40,14 +41,6 @@ public class Message {
 
     public void setChatMessage(String chatMessage) {
         this.chatMessage = chatMessage;
-    }
-
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
     }
 
     public int getMessageFromUserId() {
